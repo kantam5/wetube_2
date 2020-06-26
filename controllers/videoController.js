@@ -1,8 +1,15 @@
 // 이름이 home인 pug를 찾는다. view engine이 pug이므로
 // rneder(템플릿, 전달할 객체)
 export const home = (req, res) => res.render("home", { pageTitle: "Home" });
-export const search = (req, res) =>
-  res.render("search", { pageTitle: "Search" });
+
+export const search = (req, res) => {
+  // term = req.query.term
+  const {
+    query: { term: searchingBy },
+  } = req;
+  // searchingBy: searchingBy
+  res.render("search", { pageTitle: "Search", searchingBy });
+};
 export const videos = (req, res) =>
   res.render("videos", { pageTitle: "Videos" });
 export const upload = (req, res) =>
