@@ -1,4 +1,3 @@
-import { videos } from "../db";
 import routes from "../routes";
 
 // 이름이 home인 pug를 찾는다. view engine이 pug이므로
