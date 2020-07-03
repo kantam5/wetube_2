@@ -1,7 +1,9 @@
+import multer from "multer";
 import routes from "./routes";
 
-// 로컬을 전역으로 변경, pug에서 사용가능하도록
-export const localMiddleware = (req, res, next) => {
+const multerVideo = multer({ dest: "videos/" });
+
+export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
   res.locals.user = {
@@ -10,3 +12,5 @@ export const localMiddleware = (req, res, next) => {
   };
   next();
 };
+
+export const uploadVideo = multerVideo.single("videoFile");

@@ -2,7 +2,7 @@ import "./db";
 import app from "./app";
 import dotenv from "dotenv";
 dotenv.config();
-import "./models/video";
+//import "./models/video";
 import "./models/Comment";
 // 앱에 있는 get도 다 import된다.
 
